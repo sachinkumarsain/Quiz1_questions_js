@@ -57,7 +57,8 @@ btn.onclick = () => {
         if ((questionCounter===4)&&(timerA==0)) {
             clearInterval(x)
             // question.innerHTML = ""
-            alert("Time Up");
+            // alert("Time Up");
+            calculatescore()
 
         }
         if (timerA === 0) {
@@ -113,6 +114,25 @@ function nextOptions() {
 
 // }
 
+let useranswer=[]
+function storeUserAnswer(){
+    const options=document.querySelectorAll('.option input');
+    for(let i=0; i<options.length;i++){
+        if(options[i].checked){
+            useranswer.push(options[i].nexteElementSibling.innerHTML)
+        }
+    }
+    console.log(useranswer)
+}
+function calculatescore(){
+    let score=0;
+    for(let i=0;i<useranswer.length;i++){
+        if(Number(useranswer[i])===c[optionCounter].answer){
+            score++
+        }
+        alert('Your score is'+score)
+    }
+}
 
 
 
