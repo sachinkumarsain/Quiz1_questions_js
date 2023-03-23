@@ -17,7 +17,7 @@ const c = [
         options: [3, 2, 4, 1]
 
     },
-    {
+    {     
         question: "3*2",
         answer: 6,
         options: [9, 7, 3, 6]
@@ -38,11 +38,11 @@ let question = document.querySelector('.question');
 let timer = document.querySelector('.timer')
 let score = document.querySelector(".wapper2 .score")
 let options = document.querySelector('.option')
-let input = document.querySelectorAll('input.type')
 let questionCounter = 0;
 let optionCounter = 0;
 let questionNum = 1;
 let scorecount = 0;
+let answercount=0;
 
 btn.onclick = () => {
     wapper1.style.display = "none";
@@ -54,9 +54,9 @@ btn.onclick = () => {
     timer.innerHTML = timerA;
     let x = setInterval(() => {
 
-        if (questionCounter===5) {
+        if ((questionCounter===4)&&(timerA==0)) {
             clearInterval(x)
-            question.innerHTML = ""
+            // question.innerHTML = ""
             alert("Time Up");
 
         }
@@ -66,6 +66,7 @@ btn.onclick = () => {
             questionNum++
             questionCounter++;
             optionCounter++;
+            answercount++;
             nextOptions();
             nextQuestion();
 
@@ -74,7 +75,7 @@ btn.onclick = () => {
             timer.innerHTML = --timerA
         }
 
-    }, 600)
+    }, 1000)
 
 }
 
@@ -95,22 +96,27 @@ function nextOptions() {
         input.setAttribute('name', "option");
 
         const span = document.createElement("span")
-        span.innerHTML = c[optionCounter].options[i]
+        span.innerHTML = ":- "+c[optionCounter].options[i]
 
         document.querySelector('.box .option').append(input)
         document.querySelector('.box .option').append(span)
 
+    //    input1()
+
     }
-    // if (c[optionCounter].options.length === input[i].length) {
-
-    // }
-    // options.innerHTML=c[optionCounter].options
-
-
-
-
+    
 }
-// console.log(c[optionCounter].options)
+// input[i].onclick=()=>{
+//     if(c[optionCounter].options[i]===answercount){
+//         alert("hello")
+//     }
+
+// }
+
+
+
+
+
 
 
 

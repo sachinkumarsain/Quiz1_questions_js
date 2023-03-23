@@ -5,7 +5,7 @@
 } 
 
  .wapper1,
-.wapper2 ,.wapper2 .box{
+.wapper2,.wapper2 .box{
     height: 100vh;
     display: flex;
     align-items: center;
@@ -27,7 +27,8 @@
 }
 
 .wapper2 {
-    display: none;
+    display: flex;
+    height: 100vh;
 }
 .wapper2 .box h2{
     position: absolute;
@@ -53,3 +54,39 @@
     color: white;
     background-color: black;
 }
+.option{
+    font-size: 18px;
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+span{
+    
+    margin-right: 20px;
+}
+input{
+    margin-left: 20px;
+    margin-top: 3px;
+    height: 15px;
+    width: 15px;
+}
+.wapper3 {
+    height: 100vh;
+    display: none;
+    background: #BBD2C5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #ECE9E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
